@@ -110,6 +110,7 @@ Building an open-source collection of:
 
 ### BSc (Honours) in Biomedical Science
 **University of Delhi, India**
+
 **2022 – 2026** 
 **Final Grade: First Class**
 
