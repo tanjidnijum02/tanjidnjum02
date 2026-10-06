@@ -109,8 +109,9 @@ Building an open-source collection of:
 ## 🎓 Education
 
 ### BSc (Honours) in Biomedical Science
-**University of Delhi, India**  
-**First Class**
+**University of Delhi, India**
+**2022 – 2026** 
+**Final Grade: First Class**
 
 ### Higher Secondary Certificate (HSC)
 **Notre Dame College, Dhaka**  
