@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Tanjidul Huda: Biomedical Science graduate working on single-cell transcriptomics, cancer genomics and explainable AI.">
+<meta name="author" content="Tanjidul Huda">
+<title>Tanjidul Huda Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column, a sticky section index on wide screens; H&E stain palette (hematoxylin violet + eosin pink) */
+:root{
+  --bg:#F7F6FA; --surface:#FFFFFF; --fg:#1C1830; --muted:#5D5873; --line:#E3E0EC;
+  --hema:#4636A0; --eosin:#B83E72; --chip:#EEEBF7;
+  --display:"Newsreader",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14121D; --surface:#1C1929; --fg:#ECE9F5; --muted:#A39EB8; --line:#2E2A40;
+  --hema:#A99BFF; --eosin:#F08AB5; --chip:#262238; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14121D; --surface:#1C1929; --fg:#ECE9F5; --muted:#A39EB8; --line:#2E2A40;
+  --hema:#A99BFF; --eosin:#F08AB5; --chip:#262238; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:48px 64px;display:grid;grid-template-columns:180px minmax(0,1fr);gap:48px}
+nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 32px);align-self:start;display:flex;flex-direction:column;gap:6px;font-size:14px}
+nav a{color:var(--muted);text-decoration:none;padding:2px 0}
+nav a:hover,nav a:focus-visible{color:var(--hema)}
+main{min-width:0;display:flex;flex-direction:column;gap:56px}
+a{color:var(--hema)}
+img{max-width:100%}
+a:focus-visible{outline:2px solid var(--hema);outline-offset:2px;border-radius:2px}
+header{display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--eosin)}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(40px,7vw,64px);line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.lede{font-size:18.5px;max-width:62ch;color:var(--fg);margin:0}
+.links{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:15px}
+.links a{text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+.email{font-family:var(--mono);font-size:14px;color:var(--muted)}
+h2{font-family:var(--display);font-weight:600;font-size:28px;margin:0 0 18px;text-wrap:balance}
+section{scroll-margin-top:32px}
+.paper{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.papers{display:flex;flex-direction:column;gap:18px}
+.paper h3{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.3;margin:0;text-wrap:balance}
+.meta{font-size:14px;color:var(--muted);margin:0}
+.paper p{margin:0;max-width:68ch}
+.stats{display:flex;flex-wrap:wrap;gap:8px}
+.stat{font-family:var(--mono);font-size:13px;background:var(--chip);border-radius:4px;padding:4px 9px;font-variant-numeric:tabular-nums}
+.stat b{font-weight:500;color:var(--hema)}
+.doi{font-family:var(--mono);font-size:13.5px;display:flex;flex-wrap:wrap;gap:6px 18px}
+.doi a{overflow-wrap:anywhere}
+i.g{font-style:italic}
+.app{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;border-top:3px solid var(--eosin);background:var(--surface);border-radius:0 0 6px 6px;padding:22px 24px;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.app p{margin:4px 0 0;max-width:60ch}
+.btn{display:inline-block;background:var(--hema);color:var(--bg);text-decoration:none;font-weight:500;padding:10px 16px;border-radius:4px;white-space:nowrap}
+.btn:hover{filter:brightness(1.08)}
+.rows{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;padding:14px 0;border-top:1px solid var(--line)}
+.row:last-child{border-bottom:1px solid var(--line)}
+.when{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.row h3{font-size:16.5px;font-weight:600;margin:0}
+.row p,.row ul{margin:4px 0 0}
+.row ul{padding-left:18px}
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 32px}
+.skills h3{font-size:13px;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:0 0 6px}
+.skills p{margin:0}
+footer{font-size:13.5px;color:var(--muted)}
+@media (max-width:760px){
+  .wrap{grid-template-columns:minmax(0,1fr);gap:28px;padding-block:28px 48px}
+  nav{position:static;flex-direction:row;flex-wrap:wrap;gap:6px 16px}
+  .row{grid-template-columns:minmax(0,1fr);gap:2px}
+  .skills{grid-template-columns:minmax(0,1fr)}
+  .app{grid-template-columns:minmax(0,1fr)}
+}
+@media print{
+  @page{size:A4;margin:14mm 0}
+  nav{display:none}
+  .wrap{grid-template-columns:minmax(0,1fr);max-width:none;padding-block:0;padding-left:16mm;padding-right:16mm}
+  main{gap:28px}
+  .paper,.row,.app,.skills>div,header{break-inside:avoid}
+  h2{break-after:avoid}
+  .btn{color:#fff}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<nav aria-label="Sections">
+  <a href="#research">Research</a>
+  <a href="#app">BioXAI app</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
+<main>
+<header>
+  <div class="eyebrow">Biomedical Science · Bioinformatics · Explainable AI</div>
+  <h1>Tanjidul Huda</h1>
+  <p class="lede">Biomedical Science graduate (University of Delhi) working on single-cell transcriptomics and interpretable machine learning for cancer biology. I build reproducible Python workflows and test whether model-derived genes hold up under sample-aware validation.</p>
+  <div class="links">
+    <a href="https://github.com/tanjidnijum02">GitHub</a>
+    <a href="https://orcid.org/0009-0001-9522-1492">ORCID</a>
+    <a href="https://bioxai-research-lab.streamlit.app/">BioXAI Research Lab app</a>
+  </div>
+  <div class="email">tanjidulhuda@gmail.com</div>
+</header>
+
+<section id="research">
+  <h2>Research</h2>
+  <div class="papers">
+    <article class="paper">
+      <div class="eyebrow">First author · Manuscript, 2026</div>
+      <h3>Integrative Single-Cell Transcriptomics and Explainable AI for Disease Mechanism and Biomarker Discovery in Triple-Negative Breast Cancer</h3>
+      <p class="meta">Tanjidul Huda, Sriporna Biswas</p>
+      <p>Re-analysis of ClonMapper-barcoded MDA-MB-231 cells (GEO GSE329526) separated into invasive and non-invasive fractions. Sample-level differential expression, XGBoost with whole-sample hold-out, a QC-only baseline, held-out SHAP and GSEA. The invasive state was reproducible across independent transwell samples and involved EMT-related (<i class="g">TGFBR2</i>, <i class="g">VIM</i>, <i class="g">HMGA1</i>), inflammatory (<i class="g">CCL2</i>, <i class="g">CXCL2</i>) and KRAS/E2F programmes.</p>
+      <div class="stats">
+        <span class="stat">cells <b>15,294</b></span>
+        <span class="stat">held-out AUC <b>0.92</b></span>
+        <span class="stat">QC-only AUC <b>0.63</b></span>
+        <span class="stat">DE genes (FDR&lt;0.05) <b>6,651</b></span>
+      </div>
+      <div class="doi">
+        <a href="https://doi.org/10.5281/zenodo.23494607">Code: doi.org/10.5281/zenodo.23494607</a>
+        <a href="https://github.com/tanjidnijum02/tnbc-invasion-scrna-xai">GitHub repository</a>
+      </div>
+    </article>
+    <article class="paper">
+      <div class="eyebrow">Second author · Preprint submitted to bioRxiv, 2026</div>
+      <h3>An Interpretable Machine Learning Framework for Early- versus Late-Stage Classification of Breast Cancer from Gene Expression, with Co-expression Network Analysis</h3>
+      <p class="meta">Sriporna Biswas, Tanjidul Huda</p>
+      <p>TCGA-BRCA RNA-seq (UCSC Xena), 65-gene a priori panel, four classifiers with leakage-safe preprocessing, permutation importance, FDR-corrected differential expression and a co-expression network. Reports a limited but measurable stage signal, stated with confidence intervals.</p>
+      <div class="stats">
+        <span class="stat">tumours <b>1,075</b></span>
+        <span class="stat">test ROC-AUC <b>0.618</b></span>
+        <span class="stat">95% CI <b>0.530–0.704</b></span>
+      </div>
+      <div class="doi">
+        <a href="https://doi.org/10.5281/zenodo.23456699">Code: doi.org/10.5281/zenodo.23456699</a>
+        <a href="https://github.com/12345sri/breast-cancer-stage-ml-tcga">GitHub repository</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="app">
+  <h2>BioXAI Research Lab</h2>
+  <div class="app">
+    <div>
+      <strong>Founder and developer</strong>
+      <p>An interactive web application I designed, built and deployed with Streamlit to make bioinformatics and explainable-AI research accessible beyond code notebooks.</p>
+    </div>
+    <a class="btn" href="https://bioxai-research-lab.streamlit.app/">Open the app</a>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="rows">
+    <div class="row">
+      <div class="when">Jan 2026 – present</div>
+      <div>
+        <h3>Research Intern, Bioinformatics &amp; AI · Rapture Biotech International Pvt. Ltd., Noida</h3>
+        <ul>
+          <li>Completed two cancer-bioinformatics projects: breast cancer stage classification (TCGA-BRCA) and the TNBC invasion single-cell study.</li>
+          <li>Single-cell RNA-seq analysis in Scanpy; pseudobulk differential expression; GSEA and Enrichr.</li>
+          <li>XGBoost with group-aware cross-validation and SHAP interpretation; released code with DOIs on Zenodo.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">Thesis · 2026</div>
+      <div>
+        <h3>Heart Rate Changes as an Indicator of Academic Stress in College Students</h3>
+        <p>BSc (Hons) Biomedical Science with Research dissertation, Bhaskaracharya College of Applied Sciences, University of Delhi; supervised by Dr Neha Singh. Resting ECG with BIOPAC MP36 (modified Lead II), PSS-10 screening, and HRV analysis in Kubios HRV (SDNN, RMSSD, LF/HF, PNS/SNS indices). <a href="https://github.com/tanjidnijum02/tanjidnjum02/blob/main/thesis/Tanjidul_Huda_BSc_Thesis_2026.pdf">Read the thesis (PDF)</a></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">2024</div>
+      <div>
+        <h3>Hands-on training in DNA fingerprinting · Institute of Transgene Life Sciences, Lucknow</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="rows">
+    <div class="row">
+      <div class="when">2022 – 2026</div>
+      <div>
+        <h3>BSc (Honours) Biomedical Science with Research · Bhaskaracharya College of Applied Sciences, University of Delhi</h3>
+        <p>First Class. ICCR Scholarship, Government of India (fully funded).</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="when">2018 – 2020</div>
+      <div>
+        <h3>Higher Secondary Certificate (Science) · Notre Dame College, Dhaka</h3>
+        <p>GPA 5.00 / 5.00</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div><h3>Bioinformatics</h3><p>scRNA-seq (Scanpy, AnnData), pseudobulk DE, GSEA, Enrichr, STRING, TCGA and GEO data</p></div>
+    <div><h3>Machine learning</h3><p>XGBoost, scikit-learn, SHAP, grouped cross-validation, leakage control</p></div>
+    <div><h3>Programming</h3><p>Python, pandas, Jupyter / Google Colab, Git and GitHub, Streamlit</p></div>
+    <div><h3>Laboratory &amp; signals</h3><p>DNA extraction, PCR, gel electrophoresis, DNA fingerprinting; ECG/HRV (Kubios)</p></div>
+    <div><h3>Languages</h3><p>Bengali (native), English (professional), Hindi (conversational)</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="margin:0">Email <span class="email">tanjidulhuda@gmail.com</span> · <a href="https://orcid.org/0009-0001-9522-1492">ORCID 0009-0001-9522-1492</a> · <a href="https://github.com/tanjidnijum02">github.com/tanjidnijum02</a></p>
+</section>
+<footer>New Delhi, India</footer>
+</main>
+</div>
+
+</body>
+</html>
